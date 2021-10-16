@@ -1,0 +1,107 @@
+//EXE 1
+<?php
+function fatorial()
+{
+  $n=4;
+  $fatorial=1;
+  $count=1;
+
+  while($count<=$n){
+   $fatorial *= $count;
+   $count++;
+  } 
+  echo $fatorial;
+}
+
+function numero_primo()
+{
+  for ($n = 2; $n <= 100; $n++) {
+  $primo = true;
+  for ($x = 2; $x < $n; $x++) {
+  if ($n % $x == 0) {
+  $primo = false;
+  break;
+  }
+  }
+  if ($primo) {
+  echo ' ' . $n;
+  }
+  }
+}
+
+function perfect_number()
+{
+  $n = 4;
+
+  if($n == soma($n))
+   echo "É perfeito";
+  else
+   echo "Não é perfeito";
+
+  function soma($n){
+   $divisores=0;
+   for($count=1 ; $count<$n ; $count++)
+    if($n % $count==0)
+     $divisores += $count;
+   return $divisores;
+  }
+?>
+
+//EXE 2
+<?php
+ function vetor_fatorial(){
+  $array = array();
+    $n=4;
+    $fatorial=1;
+    $count=1;
+
+    while($count<=$n){
+     $fatorial *= $count;
+     $count++;
+     $array[] = $fatorial;
+    } 
+     print_r($array);
+     }
+     
+ function vetor_numero_primo()
+ {
+    $array = array();
+    for ($n = 2; $n <= 100; $n++) {
+    $primo = true;
+    for ($x = 2; $x < $n; $x++) {
+    if ($n % $x == 0) {
+    $primo = false;
+    break;
+    }
+    }
+    if ($primo) {
+    $array[] = $n;
+    }
+    }
+    print_r($array)
+ }
+ 
+ function vetor_numero_perfeito()
+ {
+    $n = 100;
+    $array = array();
+
+    for($x = 1; $x <= $n; $x++)
+    {
+    if($x == soma($x))
+    {
+     $array[] = $x;
+    }
+    }
+     print_r($array);
+
+    function soma($n){
+     $divisores=0;
+     for($count=1 ; $count<$n ; $count++)
+      if($n % $count==0)
+       $divisores += $count;
+     return $divisores;
+  }
+ }
+ 
+?>
